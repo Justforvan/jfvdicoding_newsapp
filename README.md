@@ -1,6 +1,7 @@
-# new_dicoding_newsapp
+# JF Dicoding NewsApp
 
-New news app for Dicoding course
+My version of the newsapp originally made by Dicoding Indonesia
+No copyright infringement intended. This repo is intended as learning field.
 
 ## Getting Started
 
