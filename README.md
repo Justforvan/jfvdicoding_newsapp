@@ -1,6 +1,6 @@
 # JF Dicoding NewsApp
 
-My version of the newsapp originally made by Dicoding Indonesia
+My version of the news app originally made by Dicoding Indonesia
 No copyright infringement intended. This repo is intended as learning field.
 
 ## Getting Started
