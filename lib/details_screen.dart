@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_dicoding_newsapp/articles.dart';
+import 'package:new_dicoding_newsapp/webview_widget.dart';
 
 class ArticleDetailsPage extends StatelessWidget {
   static const routeName = '/article_detail';
@@ -32,7 +33,10 @@ class ArticleDetailsPage extends StatelessWidget {
                 const Divider(color: Colors.grey),
                 Text(article.content, style: const TextStyle(fontSize: 16),),
                 const SizedBox(height: 10,),
-                ElevatedButton(onPressed: (){}, child: const Text("Read More"))
+                ElevatedButton(onPressed: (){
+                  Navigator.pushNamed(context, ArticleWebView.routeName, arguments: article.url);
+                  
+                }, child: const Text("Read More"))
               ],
             ),)
           ],

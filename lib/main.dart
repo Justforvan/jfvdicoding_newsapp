@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_dicoding_newsapp/articles.dart';
 import 'package:new_dicoding_newsapp/details_screen.dart';
+import 'package:new_dicoding_newsapp/webview_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         NewsListPage.routeName: (context) => const NewsListPage(),
         ArticleDetailsPage.routeName: (context) => ArticleDetailsPage(article: ModalRoute.of(context)?.settings.arguments as Article),
+        ArticleWebView.routeName: (context) => ArticleWebView(url: ModalRoute.of(context)?.settings.arguments as String)
       },
     );
   }
@@ -47,7 +49,7 @@ class NewsListPage extends StatelessWidget {
     Widget build(BuildContext context) {
       return SafeArea(child: Scaffold(
           appBar: AppBar(title: const Text('News App'),),
-        body: FutureBuilder<String>(builder: (context, snapshot) {
+          body: FutureBuilder<String>(builder: (context, snapshot) {
           final List<Article> articles = parseArticles(snapshot.data);
           return ListView.builder(
               itemCount: articles.length,
