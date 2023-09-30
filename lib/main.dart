@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_dicoding_newsapp/articles.dart';
+import 'package:new_dicoding_newsapp/details_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: NewsListPage.routeName,
       routes: {
         NewsListPage.routeName: (context) => const NewsListPage(),
+        ArticleDetailsPage.routeName: (context) => ArticleDetailsPage(article: ModalRoute.of(context)?.settings.arguments as Article),
       },
     );
   }
@@ -36,6 +38,9 @@ class NewsListPage extends StatelessWidget {
         leading: Image.network(article.urlToImage, width: 100, errorBuilder: (ctx, error, _) => const Center(child: Icon(Icons.error)),),
         title: Text(article.title),
         subtitle: Text(article.description),
+        onTap: () {
+          Navigator.pushNamed(context, ArticleDetailsPage.routeName, arguments: article);
+        },
       );
     }
     @override
