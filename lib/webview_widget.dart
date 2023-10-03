@@ -1,3 +1,4 @@
+import 'package:new_dicoding_newsapp/widgets/custom_scaffold.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,7 @@ class ArticleWebView extends StatelessWidget {
   Widget build (BuildContext context) {
     final controller = WebViewController()..loadRequest(Uri.parse(url));
 
-    return SafeArea(child: Scaffold(
-      appBar: AppBar(
-        title: const Text('News App'),
-      ),
+    return SafeArea(child: CustomScaffold(
       body: WebViewWidget(controller: controller),
     ));
   }
